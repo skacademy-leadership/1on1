@@ -1,0 +1,106 @@
+# Netlify 배포 설정
+
+[build]
+  # 빌드 명령어 (필요한 경우)
+  command = "echo 'Static PWA - No build required'"
+  
+  # 배포할 디렉토리
+  publish = "."
+  
+  # 환경 변수
+  [build.environment]
+    NODE_VERSION = "18"
+
+# 리다이렉트 및 리라이트 규칙
+[[redirects]]
+  # SPA 라우팅을 위한 fallback
+  from = "/pages/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  # Service Worker 캐싱을 위한 헤더
+  from = "/sw.js"
+  to = "/sw.js"
+  status = 200
+  [redirects.headers]
+    Service-Worker-Allowed = "/"
+    Cache-Control = "no-cache"
+
+# 헤더 설정
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # PWA 관련 헤더
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # HTTPS 강제 (프로덕션)
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+[[headers]]
+  for = "/public/manifest.json"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Content-Type = "application/javascript"
+    Service-Worker-Allowed = "/"
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/public/icons/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/src/css/*"
+  [headers.values]
+    Content-Type = "text/css"
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/src/js/*"
+  [headers.values]
+    Content-Type = "application/javascript"
+    Cache-Control = "public, max-age=86400"
+
+# 폼 처리 (필요한 경우)
+# [[forms]]
+#   name = "contact"
+
+# 플러그인 (필요한 경우)
+[[plugins]]
+  package = "netlify-plugin-lighthouse"
+  
+  [plugins.inputs.audits]
+    output_path = "reports/lighthouse"
+    
+  [plugins.inputs.settings]
+    preset = "desktop"
+    
+# Edge Functions (필요한 경우)
+# [[edge_functions]]
+#   function = "hello"
+#   path = "/api/hello"
+
+# 개발 서버 설정
+[dev]
+  command = "python3 -m http.server 8888"
+  port = 8888
+  targetPort = 8888
+  publish = "."
+  
+# 환경별 설정
+[context.production.environment]
+  NODE_ENV = "production"
+  
+[context.deploy-preview.environment]
+  NODE_ENV = "preview"
+  
+[context.branch-deploy.environment]
+  NODE_ENV = "development"

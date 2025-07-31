@@ -1,0 +1,11 @@
+:root {
+  /* 색상 변경 */
+  --primary-color: #4A90E2;     /* 메인 색상 */
+  --background-color: #F8F9FA;  /* 배경 색상 */
+  
+  /* 폰트 크기 변경 */
+  --font-size-lg: 1.125rem;
+  
+  /* 간격 조정 */
+  --spacing-lg: 1.5rem;
+}

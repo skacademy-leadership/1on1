@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4A90E2">
+    <title>Hello World PWA</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./public/manifest.json">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./public/favicon.ico">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="./public/icons/icon-192x192.png">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./src/css/design-system.css">
+    <link rel="stylesheet" href="./src/css/components.css">
+    <link rel="stylesheet" href="./src/css/responsive.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="다양한 기기에서 최적화된 Hello World Progressive Web App">
+    <meta name="keywords" content="PWA, Progressive Web App, Hello World, 반응형">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Hello World PWA">
+    <meta property="og:description" content="다양한 기기에서 최적화된 Progressive Web App">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./public/icons/icon-512x512.png">
+</head>
+<body>
+    <!-- 로딩 스피너 -->
+    <div id="loading" class="loading-container">
+        <div class="loading-spinner">🎯</div>
+        <div class="loading-text">앱을 불러오는 중...</div>
+    </div>
+
+    <!-- 메인 앱 컨테이너 -->
+    <div id="app" class="app-container" style="display: none;">
+        <!-- 헤더 -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-icon">🎯</div>
+                <h1 class="header-title">Hello World PWA</h1>
+            </div>
+        </header>
+
+        <!-- 메인 콘텐츠 -->
+        <main class="main">
+            <div class="content-wrapper">
+                <div class="welcome-card">
+                    <h2 class="welcome-title">안녕하세요!</h2>
+                    <p class="welcome-message">Hello World</p>
+                    <p class="welcome-description">
+                        이것은 GitHub Pages에서 호스팅되는 PWA 앱입니다.<br>
+                        다양한 기기에서 최적화되어 있습니다.
+                    </p>
+                </div>
+
+                <!-- 네비게이션 카드들 -->
+                <div class="nav-grid">
+                    <div class="nav-card" onclick="navigateTo('home')">
+                        <div class="nav-icon">🏠</div>
+                        <div class="nav-title">홈</div>
+                        <div class="nav-description">메인 페이지</div>
+                    </div>
+                    
+                    <div class="nav-card" onclick="navigateTo('about')">
+                        <div class="nav-icon">ℹ️</div>
+                        <div class="nav-title">소개</div>
+                        <div class="nav-description">앱 정보</div>
+                    </div>
+                    
+                    <div class="nav-card" onclick="navigateTo('contact')">
+                        <div class="nav-icon">📞</div>
+                        <div class="nav-title">연락처</div>
+                        <div class="nav-description">문의하기</div>
+                    </div>
+                    
+                    <div class="nav-card" onclick="window.open('https://github.com/skacademy-leadership/1on1', '_blank')">
+                        <div class="nav-icon">💻</div>
+                        <div class="nav-title">GitHub</div>
+                        <div class="nav-description">소스 코드 보기</div>
+                    </div>
+                </div>
+                
+                <!-- GitHub Pages 정보 -->
+                <div class="info-card">
+                    <h3>🌐 GitHub Pages 호스팅</h3>
+                    <p>이 PWA는 GitHub Pages를 통해 무료로 호스팅되고 있습니다.</p>
+                    <ul>
+                        <li>✅ HTTPS 자동 제공</li>
+                        <li>✅ 전 세계 CDN</li>
+                        <li>✅ 자동 배포</li>
+                        <li>✅ 커스텀 도메인 지원</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <!-- 푸터 -->
+        <footer class="footer">
+            <p>&copy; 2025 Hello World PWA. Hosted by GitHub Pages.</p>
+        </footer>
+    </div>
+
+    <!-- PWA 설치 프롬프트 -->
+    <div id="install-prompt" class="install-prompt" style="display: none;">
+        <div class="install-content">
+            <p>이 앱을 홈 화면에 추가하시겠습니까?</p>
+            <div class="install-buttons">
+                <button id="install-btn" class="btn btn-primary">설치</button>
+                <button id="dismiss-btn" class="btn btn-secondary">나중에</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./src/js/utils.js"></script>
+    <script src="./src/js/components.js"></script>
+    <script src="./src/js/app.js"></script>
+</body>
+</html>
