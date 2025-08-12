@@ -9,7 +9,7 @@
   
   # 환경 변수
   [build.environment]
-    NODE_VERSION = "22.18.0"
+    NODE_VERSION = "20.16.0"
 
 # 리다이렉트 및 리라이트 규칙
 [[redirects]]
