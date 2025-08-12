@@ -8,10 +8,12 @@
   "devDependencies": {
     "netlify-plugin-lighthouse": "^6.0.1",
     "netlify-plugin-cache": "^1.0.3",
-    "netlify-plugin-pwa": "^0.4.0"
+    "netlify-plugin-pwa": "^0.4.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "engines": { "node": "22.18.0" },
   "keywords": ["pwa", "netlify"],
-  "author": "Your Name",
+  "author": "skacademy.leadership",
   "license": "MIT"
 }
