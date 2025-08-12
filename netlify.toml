@@ -75,7 +75,7 @@
 
 # 플러그인 (필요한 경우)
 [[plugins]]
-  package = "netlify-plugin-lighthouse"
+  package = "@netlify/plugin-lighthouse"
   
   [plugins.inputs.audits]
     output_path = "reports/lighthouse"
