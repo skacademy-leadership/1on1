@@ -1,7 +1,7 @@
 {
-  "name": "Hello World PWA",
-  "short_name": "HelloPWA",
-  "description": "GitHub Pages에서 호스팅되는 Hello World Progressive Web App",
+  "name": "LeadOn: 1on1 Coach",
+  "short_name": "LeadOn Coach",
+  "description": "AI 기반 리더십 코칭 및 1:1 면담 가이드 - GROW+ 모델과 실무 사례 제공",
   "start_url": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
@@ -9,7 +9,7 @@
   "background_color": "#F8F9FA",
   "lang": "ko",
   "scope": "./",
-  "categories": ["productivity", "utilities"],
+  "categories": ["productivity", "business", "education"],
   "icons": [
     {
       "src": "./public/icons/icon-72x72.png",
@@ -62,18 +62,50 @@
   ],
   "screenshots": [
     {
-      "src": "./public/icons/icon-512x512.png",
-      "sizes": "512x512",
+      "src": "./public/screenshots/mobile-screenshot.png",
+      "sizes": "390x844",
       "type": "image/png",
-      "form_factor": "narrow"
+      "form_factor": "narrow",
+      "label": "LeadOn 1on1 Coach 모바일 화면"
+    },
+    {
+      "src": "./public/screenshots/desktop-screenshot.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "LeadOn 1on1 Coach 데스크톱 화면"
     }
   ],
   "shortcuts": [
     {
-      "name": "홈",
-      "short_name": "Home",
-      "description": "메인 페이지로 이동",
-      "url": "./",
+      "name": "가이드",
+      "short_name": "가이드",
+      "description": "1on1 대화 절차 가이드",
+      "url": "./#guide",
+      "icons": [
+        {
+          "src": "./public/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "사례",
+      "short_name": "사례",
+      "description": "상황별 1on1 대화 사례",
+      "url": "./#cases",
+      "icons": [
+        {
+          "src": "./public/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "질문",
+      "short_name": "질문",
+      "description": "1on1을 위한 질문 목록",
+      "url": "./#questions",
       "icons": [
         {
           "src": "./public/icons/icon-192x192.png",
